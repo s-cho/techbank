@@ -24,7 +24,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [ '@/assets/style.css' ],
+  css: ['@/assets/style.css'],
 
   /*
   ** Plugins to load before mounting the App
@@ -55,7 +55,7 @@ module.exports = {
     '@nuxtjs/auth',
     // Doc: https://bootstrap-vue.js.org/docs/s
     'bootstrap-vue/nuxt',
-    "nuxt-fontawesome"
+    'nuxt-fontawesome'
   ],
 
   /*
@@ -63,20 +63,20 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://localhost:8000/api',
+    baseURL: 'http://localhost:8000/api'
   },
 
-    /*
+  /*
   ** fontawesome
   */
- fontawesome: {
-  imports: [
-    {
-      set: "@fortawesome/free-solid-svg-icons",
-      icons: ["fas"]
-    }
-  ]
-},
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }
+    ]
+  },
 
   router: {
     middleware: ['auth']

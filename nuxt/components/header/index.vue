@@ -8,14 +8,14 @@
       href="/">TechBank</a>
     <div class="user-menu">
       <b-dropdown 
-      variant="success" 
-      right 
-      size="sm">
-      <template slot="button-content">
-        <font-awesome-icon icon="user"/>
-      </template>
-      <b-dropdown-item href="#">{{ this.$auth.user.name }}</b-dropdown-item>
-      <b-dropdown-item @click="logout">ログアウト</b-dropdown-item>
+        variant="success" 
+        right 
+        size="sm">
+        <template slot="button-content">
+          <font-awesome-icon icon="user"/>
+        </template>
+        <b-dropdown-item href="#">{{ this.$auth.user.name }}</b-dropdown-item>
+        <b-dropdown-item @click="logout">ログアウト</b-dropdown-item>
       </b-dropdown>
     </div>
   </header>
@@ -25,9 +25,7 @@
 export default {
   components: {},
   data() {
-    return {
-
-    }
+    return {}
   },
   methods: {
     logout() {
@@ -35,7 +33,7 @@ export default {
       this.$router.push({
         path: '/login'
       })
-    },
+    }
   }
 }
 </script>
@@ -73,5 +71,4 @@ export default {
   margin-right: 10px;
   color: white;
 }
-
 </style>
