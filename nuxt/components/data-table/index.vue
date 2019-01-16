@@ -53,30 +53,7 @@ export default {
     },
     fields: {
       type: Object,
-      default: () => [
-        {
-          id: {
-            label: 'id',
-            sortable: true
-          },
-          item1: {
-            label: 'item1',
-            sortable: true
-          },
-          item2: {
-            label: 'item2',
-            sortable: true
-          },
-          item3: {
-            label: 'item3',
-            sortable: true
-          },
-          action: {
-            label: 'アクション',
-            tdClass: 'td-action'
-          }
-        }
-      ]
+      default: () => {}
     }
   },
   data() {

@@ -1,5 +1,7 @@
 <template>
-  <DataTable/>
+  <DataTable
+    :items="items"
+    :fields="fields"/>
 </template>
 
 <script>
@@ -9,7 +11,27 @@ export default {
     DataTable
   },
   data() {
-    return {}
+    return {
+      fields: {
+        qualification_code: {
+          label: '資格コード',
+          sortable: true
+        },
+        qualification_name: {
+          label: '資格名',
+          sortable: true
+        },
+        itss_level: {
+          label: 'ITSSレベル',
+          sortable: true
+        },
+        action: {
+          label: 'アクション',
+          tdClass: 'td-action'
+        }
+      },
+      items: []
+    }
   },
   methods: {}
 }

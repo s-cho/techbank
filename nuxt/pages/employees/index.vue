@@ -56,22 +56,21 @@ export default {
     async index() {
       let res = await this.$axios.get('http://localhost:8000/api/employees')
       this.items = res.data
+    },
+    // 新規作成
+    store() {
+      //
+    },
+
+    // 更新
+    update() {
+      //
+    },
+
+    // 削除
+    async destroy(id) {
+      await this.$axios.delete(`http://localhost:8000/api/employees/$id`)
     }
-  },
-
-  // 新規作成
-  store() {
-    //
-  },
-
-  // 更新
-  update() {
-    //
-  },
-
-  // 削除
-  async destroy(id) {
-    await this.$axios.delete(`http://localhost:8000/api/employees/$id`)
   }
 }
 </script>
