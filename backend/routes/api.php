@@ -18,4 +18,5 @@ Route::post('/login', 'AuthController@login');
 Route::get('/user', 'AuthController@user');
 
 Route::resource('employees', 'EmployeeController', ['except' => ['create', 'edit']]) -> middleware('auth:api');
+Route::resource('services', 'ServiceController', ['except' => ['create', 'edit']]) -> middleware('auth:api');
 

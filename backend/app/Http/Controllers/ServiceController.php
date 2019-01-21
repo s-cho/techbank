@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Employee;
+use App\Service;
 use App\Http\Controllers\Controller;
 
-class EmployeeController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
-        return $employees;
+        $services = Service::all();
+        return $services;
     }
 
     /**
@@ -27,14 +27,10 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $employee = new Employee;
-        $employee->emp_id = $request->empId;
-        $employee->emp_name = $request->empName;
-        $employee->email = $request->email;
-        $employee->gender = $request->gender;
-        $employee->address = $request->address;
-        $employee->service_code = $request->serviceCode;
-        $employee->save();
+        $service = new Service;
+        $service->service_code = $request->serviceCode;
+        $service->service_name = $request->serviceName;
+        $service->save();
     }
 
     /**
@@ -45,8 +41,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $employee = Employee::find($id);
-        return $employee;
+        $service = Service::find($id);
+        return $service;
     }
 
     /**
@@ -58,12 +54,10 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $employee = Employee::find($id);
-        $employee->emp_name = $request->empName;
-        $employee->email = $request->email;
-        $employee->gender = $request->gender;
-        $employee->address = $request->address;
-        $employee->service_code = $request->serviceCode;
+        $service = Service::find($id);
+        $service->service_code = $request->serviceCode;
+        $service->service_name = $request->serviceName;
+        $service->save();
     }
 
     /**
@@ -74,7 +68,7 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        $employee = Employee::find($id);
-        $employee->delete();
+        $service = Service::find($id);
+        $service->delete();
     }
 }

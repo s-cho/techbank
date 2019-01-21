@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Employee;
+use App\Skill;
 use App\Http\Controllers\Controller;
 
-class EmployeeController extends Controller
+class SkillController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all();
-        return $employees;
+        $skills = Skill::all();
+        return $skills;
     }
 
     /**
@@ -27,14 +27,11 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $employee = new Employee;
-        $employee->emp_id = $request->empId;
-        $employee->emp_name = $request->empName;
-        $employee->email = $request->email;
-        $employee->gender = $request->gender;
-        $employee->address = $request->address;
-        $employee->service_code = $request->serviceCode;
-        $employee->save();
+        $skill = new Skill;
+        $skill->skill_code = $request->skillCode;
+        $skill->skill_class = $request->skillClass;
+        $skill->skill_name = $request->skillName;
+        $skill->save();
     }
 
     /**
@@ -45,8 +42,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $employee = Employee::find($id);
-        return $employee;
+        $skill = Skill::find($id);
+        return $skill;
     }
 
     /**
@@ -58,12 +55,11 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $employee = Employee::find($id);
-        $employee->emp_name = $request->empName;
-        $employee->email = $request->email;
-        $employee->gender = $request->gender;
-        $employee->address = $request->address;
-        $employee->service_code = $request->serviceCode;
+        $skill = Skill::find($id);
+        $skill->skill_code = $request->skillCode;
+        $skill->skill_class = $request->skillClass;
+        $skill->skill_name = $request->skillName;
+        $skill->save();
     }
 
     /**
@@ -74,7 +70,7 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        $employee = Employee::find($id);
-        $employee->delete();
+        $skill = Skill::find($id);
+        $skill->delete();
     }
 }

@@ -29,7 +29,31 @@ export default {
       items: []
     }
   },
-  methods: {}
+   mounted() {
+    this.index()
+  },
+  methods: {
+    // -----API-----
+    // 全件取得
+    async index() {
+      let res = await this.$axios.get('http://localhost:8000/api/services')
+      this.items = res.data
+    },
+    // 新規作成
+    store() {
+      //
+    },
+
+    // 更新
+    update() {
+      //
+    },
+
+    // 削除
+    async destroy(id) {
+      await this.$axios.delete(`http://localhost:8000/api/services/$id`)
+    }
+  }
 }
 </script>
 
